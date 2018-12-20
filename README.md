@@ -11,4 +11,4 @@ Steps to run:
 * npm install
 * npm run build
 * sls deploy
-* test with Alexa
+* test with Alexa by running `sls invoke local -f lambda-ts-function -p tests/alexa-payload.json`
