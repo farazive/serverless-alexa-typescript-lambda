@@ -1,0 +1,37 @@
+{
+  "name": "nodejs-bottlejs-typescript-practice",
+  "version": "1.0.0",
+  "description": "A basic lanbda function written in node. It uses bottlejs DI and ",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./src/index.js",
+    "build": "tsc",
+    "build-lambda": "tsc && node-lambda package",
+    "deploy-lambda": "node-lambda deploy --endpoint http://192.168.99.100:4574 --accessKey '1234' --secretKey '1234'",
+    "delete-deployed-lambda": "aws --endpoint-url=http://192.168.99.100:4574 lambda delete-function --function-name 'lambda-development'",
+    "run-on-aws": "aws --endpoint-url=http://192.168.99.100:4574 lambda invoke --function-name \"lambda-development\"  outputfile.txt",
+    "tsc": "tsc",
+    "debug": "node --inspect --inspect-brk=5858 ./src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "typescript",
+    "nodejs",
+    "bottlejs",
+    "faraz"
+  ],
+  "author": "Faraz",
+  "license": "ISC",
+  "dependencies": {
+    "@types/alexa-sdk": "^1.1.1",
+    "ask-sdk": "^2.3.0",
+    "bottlejs": "^1.7.1"
+  },
+  "devDependencies": {
+    "@types/mocha": "^5.2.5",
+    "@types/node": "^10.5.7",
+    "mocha": "^5.2.0",
+    "ts-loader": "^4.4.2",
+    "typescript": "^3.0.1"
+  }
+}
